@@ -1,21 +1,50 @@
 package com.lost.coding.algo;
 
+import com.lost.coding.Utils;
+import com.lost.coding.algo.frame.IAlgo;
+
 /**
  * Created by lishoubo on 17/12/4.
  */
-public class TopK {
+public class TopK implements IAlgo {
     private final int k;
 
     private int[] heap;
 
-    public TopK(int k) {
-        this.k = k;
+    public TopK() {
+        this.k = 10;
+    }
+
+    @Override
+    public String name() {
+        return "topK";
     }
 
     public void init() {
         heap = new int[k];
     }
 
+    @Override
+    public void warmup(int[] data) {
+        insert(data);
+
+        Utils.print("data", data);
+        Utils.print("topK", heap);
+
+        reset();
+    }
+
+    @Override
+    public void reset() {
+        for (int i = 0; i < heap.length; i++) {
+            heap[i] = 0;
+        }
+    }
+
+    @Override
+    public void run(int[] data) {
+        insert(data);
+    }
 
     public void insert(int[] data) {
         for (int i = 0; i < data.length; i++) {

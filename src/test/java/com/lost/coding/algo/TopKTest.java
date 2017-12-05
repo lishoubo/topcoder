@@ -13,7 +13,7 @@ public class TopKTest {
 
     @Before
     public void setUp() throws Exception {
-        topK = new TopK(10);
+        topK = new TopK();
         topK.init();
     }
 

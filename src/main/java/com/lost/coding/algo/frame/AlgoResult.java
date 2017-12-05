@@ -1,4 +1,4 @@
-package com.lost.coding.algo;
+package com.lost.coding.algo.frame;
 
 import java.util.HashMap;
 import java.util.Map;
