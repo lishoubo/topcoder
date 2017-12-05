@@ -78,11 +78,11 @@ public class TopK {
     }
 
     private int rightChild(int i) {
-        return 2 * i + 1;
+        return 2 * i + 2;
     }
 
     private int leftChild(int i) {
-        return 2 * i;
+        return 2 * i + 1;
     }
 
     public int[] topk() {
